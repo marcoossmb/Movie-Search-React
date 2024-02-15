@@ -1,8 +1,18 @@
-# React + Vite
+# Movie-Search-React
+Aplicación realizada usando APIs y React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Cómo iniciarla
+Descarga este repositorio y abre Visual Studio Code
+```bash
+https://github.com/marcoossmb/Movie-Search-React.git
+```
+Luego instala los node_modules:
+```bash
+npm install
+```
+En el siguiente paso, ejecutamos el servidor.
+```bash
+npm run dev
+```
+Finalmente, abrimos el navegador y ponemos http://localhost:5173/
+<hr>
