@@ -1,33 +1,23 @@
-import { useState } from "react";
-
 import "./App.css";
 
+import { useState } from "react";
 import { useGetMovies } from "./assets/services/hooks/useGetMovies";
 import { ListOfMovies } from "./assets/components/ListOfMovies";
 import { NoMovies } from "./assets/components/NoMovies";
-/* import responseMovies from "./mocks/results.json"; */
-/* import { useEffect } from "react"; */
 
 function App() {
-
-  /* const [movies, setMovies] = useState(null); */
-  const [title, setTitle] = useState("");
-
-  const {getMovies, movies} = useGetMovies(title);
-
-  /* useEffect(() => {
-    setMovies(responseMovies);
-  }, []); */
+  const { setTitle, getMovies, movies } = useGetMovies("Cars");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    getMovies();
-  }
+    setTitle(searchTerm);
+  };
 
   const handleChange = (event) => {
-    setTitle(event.target.value)
-  }
-  
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <div className="container">
       <header className="header">
@@ -35,12 +25,12 @@ function App() {
         <form onSubmit={handleSubmit} action="" className="form">
           <input
             onChange={handleChange}
-            value={title}
+            value={searchTerm}
             type="text"
             className="form__input"
             placeholder="Matrix, Avengers, Cars..."
           ></input>
-          <button className="form__button">Buscar</button>
+          <button type="submit" className="form__button">Buscar</button>
         </form>
       </header>
       <main>
@@ -48,7 +38,6 @@ function App() {
       </main>
     </div>
   );
-
 }
 
 export default App;
